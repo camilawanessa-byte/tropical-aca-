@@ -1,0 +1,348 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tropical AÃ§aÃ­ | Pedido, Fidelidade e Admin</title>
+    <meta
+      name="description"
+      content="Monte seu aÃ§aÃ­, acompanhe seus pontos e gerencie produtos no painel administrativo da Tropical AÃ§aÃ­."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Tropical AÃ§aÃ­">
+        <span class="brand-mark">TA</span>
+        <span>Tropical AÃ§aÃ­</span>
+      </a>
+      <nav class="nav" aria-label="NavegaÃ§Ã£o principal">
+        <a href="#cardapio">CardÃ¡pio</a>
+        <a href="#fidelidade">Fidelidade</a>
+        <a href="#checkout">Finalizar</a>
+        <a href="#admin">Admin</a>
+      </nav>
+      <a class="header-action" href="#fidelidade">Meus pontos</a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">AÃ§aÃ­, pedido online e recompensas</p>
+          <h1>Tropical AÃ§aÃ­</h1>
+          <p class="hero-text">
+            Monte seu copo em poucos toques, acompanhe seus pontos e mantenha o cardÃ¡pio sempre atualizado.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#cardapio">Montar meu aÃ§aÃ­</a>
+            <a class="secondary-action" href="#fidelidade">Ver programa fidelidade</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-label="AÃ§aÃ­ com frutas e granola">
+          <img src="ativos/hero-acai.png" alt="AÃ§aÃ­ com frutas, granola e cobertura" />
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Diferenciais">
+        <div>
+          <strong>Pedido rÃ¡pido</strong>
+          <span>Monte e envie pelo WhatsApp</span>
+        </div>
+        <div>
+          <strong>Pontos automÃ¡ticos</strong>
+          <span>Cada compra vÃ¡lida conta no cartÃ£o</span>
+        </div>
+        <div>
+          <strong>Admin simples</strong>
+          <span>Edite preÃ§os e pause produtos</span>
+        </div>
+      </section>
+
+      <section class="builder" id="cardapio">
+        <div class="section-heading">
+          <p class="eyebrow">CardÃ¡pio</p>
+          <h2>Monte seu pedido</h2>
+          <p>Escolha o tamanho e personalize com sabores, recheios, frutas, coberturas e extras.</p>
+        </div>
+
+        <div class="order-layout">
+          <div class="customizer" id="pedido">
+            <div class="tabs" role="tablist" aria-label="Categorias do cardÃ¡pio">
+              <button class="tab active" data-tab="sizes" type="button">Tamanhos</button>
+              <button class="tab" data-tab="creams" type="button">Sabores</button>
+              <button class="tab" data-tab="fillings" type="button">Recheios</button>
+              <button class="tab" data-tab="fruits" type="button">Frutas</button>
+              <button class="tab" data-tab="toppings" type="button">Coberturas</button>
+              <button class="tab" data-tab="extras" type="button">Extras</button>
+            </div>
+
+            <div class="option-panel active" data-panel="sizes">
+              <div class="panel-title">
+                <h3>Escolha o tamanho</h3>
+                <span>ObrigatÃ³rio</span>
+              </div>
+              <div class="option-grid" data-options="sizes"></div>
+            </div>
+
+            <div class="option-panel" data-panel="creams">
+              <div class="panel-title">
+                <h3>Sabores</h3>
+                <span>Escolha atÃ© 3</span>
+              </div>
+              <div class="option-grid" data-options="creams"></div>
+            </div>
+
+            <div class="option-panel" data-panel="fillings">
+              <div class="panel-title">
+                <h3>Recheios e acompanhamentos</h3>
+                <span>Escolha atÃ© 3</span>
+              </div>
+              <div class="option-grid" data-options="fillings"></div>
+            </div>
+
+            <div class="option-panel" data-panel="fruits">
+              <div class="panel-title">
+                <h3>Frutas</h3>
+                <span>Inclua junto aos acompanhamentos</span>
+              </div>
+              <div class="option-grid" data-options="fruits"></div>
+            </div>
+
+            <div class="option-panel" data-panel="toppings">
+              <div class="panel-title">
+                <h3>Cobertura</h3>
+                <span>Escolha 1</span>
+              </div>
+              <div class="option-grid" data-options="toppings"></div>
+            </div>
+
+            <div class="option-panel" data-panel="extras">
+              <div class="panel-title">
+                <h3>Extras</h3>
+                <span>Opcional</span>
+              </div>
+              <div class="option-grid" data-options="extras"></div>
+            </div>
+          </div>
+
+          <aside class="cart" aria-label="Carrinho de compras">
+            <div class="cart-header">
+              <div>
+                <p class="eyebrow">Carrinho</p>
+                <h2>Seu aÃ§aÃ­</h2>
+              </div>
+              <button class="ghost-button" id="clearCart" type="button">Limpar</button>
+            </div>
+            <div class="cart-lines" id="cartLines"></div>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cartTotal">R$ 0,00</strong>
+            </div>
+            <a class="checkout-link" href="#checkout">Finalizar pedido</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="loyalty-section" id="fidelidade">
+        <div class="section-heading">
+          <p class="eyebrow">Programa Fidelidade</p>
+          <h2>Seu cartÃ£o digital dentro do site</h2>
+          <p>O cliente acompanha compras, pontos, QR Code e resgate no celular, sem precisar de cartÃ£o fÃ­sico.</p>
+        </div>
+
+        <div class="loyalty-layout">
+          <div class="loyalty-copy-panel">
+            <img src="ativos/acai-premium.png" alt="AÃ§aÃ­ premium com frutas e granola" />
+            <div>
+              <h3>Faltam poucos para ganhar seu aÃ§aÃ­ grÃ¡tis! ðŸ§</h3>
+              <p>
+                Ao atingir 10 aÃ§aÃ­s de 300ml, o cliente ganha 1 aÃ§aÃ­ de 300ml grÃ¡tis. Se os 10 pedidos forem de 500ml, o prÃªmio vira 1 aÃ§aÃ­ de 500ml grÃ¡tis.
+              </p>
+            </div>
+          </div>
+
+          <div class="loyalty-phone" aria-label="CartÃ£o fidelidade digital Tropical AÃ§aÃ­">
+            <div class="phone-topbar">
+              <span class="brand-chip">TA</span>
+              <strong>Tropical AÃ§aÃ­</strong>
+              <span class="profile-chip">LM</span>
+            </div>
+
+            <div class="program-card">
+              <p class="eyebrow">Clube de recompensas</p>
+              <h3>Programa Fidelidade</h3>
+              <p>Faltam poucos para ganhar seu aÃ§aÃ­ grÃ¡tis! ðŸ§</p>
+            </div>
+
+            <div class="progress-card">
+              <div class="progress-header">
+                <div>
+                  <span>Seu cartÃ£o digital</span>
+                  <strong>7 de 10 aÃ§aÃ­s</strong>
+                </div>
+                <b>70%</b>
+              </div>
+              <div class="progress-track" aria-label="7 de 10 aÃ§aÃ­s comprados" role="img">
+                <span style="width: 70%"></span>
+              </div>
+              <div class="stamp-row" aria-hidden="true">
+                <span>âœ“</span><span>âœ“</span><span>âœ“</span><span>âœ“</span><span>âœ“</span>
+                <span>âœ“</span><span>âœ“</span><i>8</i><i>9</i><i>10</i>
+              </div>
+            </div>
+
+            <div class="reward-rules">
+              <p><strong>âœ“</strong> 10 aÃ§aÃ­s de 300ml â†’ 1 aÃ§aÃ­ de 300ml grÃ¡tis</p>
+              <p><strong>âœ“</strong> 10 pedidos de 500ml â†’ 1 aÃ§aÃ­ de 500ml grÃ¡tis</p>
+            </div>
+
+            <div class="phone-grid">
+              <div class="login-card">
+                <h4>Login do cliente</h4>
+                <input type="tel" value="(11) 98234-7788" aria-label="Celular do cliente" />
+                <input type="password" value="123456" aria-label="CÃ³digo de acesso" />
+              </div>
+              <div class="qr-card">
+                <h4>QR Code</h4>
+                <div class="qr-code" aria-label="QR Code para validar compras" role="img">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <small>Validar compra</small>
+              </div>
+            </div>
+
+            <div class="history-card">
+              <div class="history-title">
+                <h4>HistÃ³rico de compras</h4>
+                <button type="button">Ver tudo</button>
+              </div>
+              <article><span>300</span><div><strong>AÃ§aÃ­ 300ml</strong><small>Hoje, 14:22 â€¢ +1 ponto</small></div><b>R$ 10,00</b></article>
+              <article><span class="green">500</span><div><strong>AÃ§aÃ­ 500ml</strong><small>21 mai, 19:05 â€¢ +1 ponto</small></div><b>R$ 15,00</b></article>
+            </div>
+
+            <button class="redeem-button" type="button">Resgatar prÃªmio</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="checkout" id="checkout">
+        <div class="section-heading">
+          <p class="eyebrow">FinalizaÃ§Ã£o</p>
+          <h2>Dados para entrega</h2>
+          <p>Preencha as informaÃ§Ãµes e envie o pedido pronto pelo WhatsApp.</p>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm">
+          <label>
+            Nome do cliente
+            <input type="text" id="customerName" placeholder="Seu nome" required />
+          </label>
+          <label>
+            Telefone/WhatsApp
+            <input type="tel" id="customerPhone" placeholder="(00) 00000-0000" required />
+          </label>
+          <label class="wide">
+            EndereÃ§o de entrega
+            <input type="text" id="customerAddress" placeholder="Rua, nÃºmero, bairro e referÃªncia" required />
+          </label>
+          <label>
+            Forma de pagamento
+            <select id="paymentMethod" required>
+              <option value="">Selecione</option>
+              <option>Pix</option>
+              <option>CartÃ£o na entrega</option>
+              <option>Dinheiro</option>
+            </select>
+          </label>
+          <label>
+            ObservaÃ§Ãµes do pedido
+            <textarea id="orderNotes" rows="4" placeholder="Ex.: sem banana, pouco leite condensado"></textarea>
+          </label>
+          <button class="whatsapp-button wide" type="submit">Enviar pedido pelo WhatsApp</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-section" id="admin">
+        <div class="section-heading">
+          <p class="eyebrow">Painel administrativo</p>
+          <h2>Gerencie preÃ§os e produtos</h2>
+          <p>Acesse como administrador para alterar preÃ§os, adicionar novos itens ou pausar produtos do cardÃ¡pio.</p>
+        </div>
+
+        <div class="admin-shell">
+          <form class="admin-login" id="adminLogin">
+            <h3>Acesso de administrador</h3>
+            <label>
+              UsuÃ¡rio
+              <input id="adminUser" type="text" autocomplete="username" placeholder="admin" required />
+            </label>
+            <label>
+              Senha
+              <input id="adminPass" type="password" autocomplete="current-password" placeholder="Senha de acesso" required />
+            </label>
+            <button class="primary-action" type="submit">Entrar no painel</button>
+            <p class="admin-note" id="adminLoginNote" role="status"></p>
+          </form>
+
+          <div class="admin-panel" id="adminPanel" hidden>
+            <div class="admin-panel-header">
+              <div>
+                <p class="eyebrow">SessÃ£o ativa</p>
+                <h3>Controle do cardÃ¡pio</h3>
+              </div>
+              <button class="ghost-button" id="adminLogout" type="button">Sair</button>
+            </div>
+
+            <form class="admin-add-form" id="adminAddForm">
+              <label>
+                Categoria
+                <select id="adminCategory" required>
+                  <option value="sizes">Tamanhos</option>
+                  <option value="creams">Sabores</option>
+                  <option value="fillings">Recheios</option>
+                  <option value="fruits">Frutas</option>
+                  <option value="toppings">Coberturas</option>
+                  <option value="extras">Extras</option>
+                </select>
+              </label>
+              <label>
+                Nome do produto
+                <input id="adminProductName" type="text" placeholder="Ex.: AÃ§aÃ­ 700ml" required />
+              </label>
+              <label>
+                PreÃ§o
+                <input id="adminProductPrice" type="number" min="0" step="0.01" value="0" required />
+              </label>
+              <label class="wide">
+                DescriÃ§Ã£o
+                <input id="adminProductDesc" type="text" placeholder="DescriÃ§Ã£o curta do item" required />
+              </label>
+              <button class="whatsapp-button wide" type="submit">Adicionar produto</button>
+            </form>
+
+            <div class="admin-toolbar">
+              <strong id="adminSummary">0 produtos cadastrados</strong>
+              <button class="secondary-action" id="resetMenu" type="button">Restaurar cardÃ¡pio base</button>
+            </div>
+
+            <div class="admin-products" id="adminProducts" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <strong>Tropical AÃ§aÃ­</strong>
+      <span>Pedido online, montagem personalizada, fidelidade digital e gestÃ£o administrativa.</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

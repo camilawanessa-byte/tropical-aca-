@@ -1,0 +1,196 @@
+{
+  "sizes": [
+    {
+      "id": "300ml",
+      "name": "Açaí 300ml",
+      "price": 10,
+      "desc": "Copo individual cremoso",
+      "paused": false
+    },
+    {
+      "id": "500ml",
+      "name": "Açaí 500ml",
+      "price": 15,
+      "desc": "Copo maior para caprichar",
+      "paused": false
+    }
+  ],
+  "creams": [
+    {
+      "id": "sensacao",
+      "name": "Sensação",
+      "price": 0,
+      "desc": "Com raspas de chocolate",
+      "paused": false
+    },
+    {
+      "id": "ninho",
+      "name": "Ninho",
+      "price": 0,
+      "desc": "Creme leve e doce",
+      "paused": false
+    },
+    {
+      "id": "acai-tradicional",
+      "name": "Açaí tradicional",
+      "price": 0,
+      "desc": "Sabor clássico da casa",
+      "paused": false
+    },
+    {
+      "id": "cupuacu",
+      "name": "Cupuaçu",
+      "price": 0,
+      "desc": "Tropical e levemente azedinho",
+      "paused": false
+    },
+    {
+      "id": "creme-tapioca",
+      "name": "Creme de tapioca",
+      "price": 0,
+      "desc": "Cremoso e regional",
+      "paused": false
+    },
+    {
+      "id": "abacaxi",
+      "name": "Abacaxi",
+      "price": 0,
+      "desc": "Refrescante e tropical",
+      "paused": false
+    },
+    {
+      "id": "ninho-trufado",
+      "name": "Ninho trufado",
+      "price": 0,
+      "desc": "Ninho com toque trufado",
+      "paused": false
+    }
+  ],
+  "fillings": [
+    {
+      "id": "granola",
+      "name": "Granola",
+      "price": 0,
+      "desc": "Crocante tradicional",
+      "paused": false
+    },
+    {
+      "id": "leite-po",
+      "name": "Leite em pó",
+      "price": 0,
+      "desc": "Finalização cremosa",
+      "paused": false
+    },
+    {
+      "id": "confete",
+      "name": "Confete",
+      "price": 0,
+      "desc": "Colorido e doce",
+      "paused": false
+    },
+    {
+      "id": "amendoim",
+      "name": "Amendoim",
+      "price": 0,
+      "desc": "Crocância extra",
+      "paused": false
+    },
+    {
+      "id": "chocoball",
+      "name": "Chocoball",
+      "price": 0,
+      "desc": "Bolinha de chocolate",
+      "paused": false
+    }
+  ],
+  "fruits": [
+    {
+      "id": "banana",
+      "name": "Banana",
+      "price": 0,
+      "desc": "Combina com tudo",
+      "paused": false
+    },
+    {
+      "id": "morango-fruta",
+      "name": "Morango",
+      "price": 0,
+      "desc": "Fresco e docinho",
+      "paused": false
+    },
+    {
+      "id": "kiwi",
+      "name": "Kiwi",
+      "price": 1.5,
+      "desc": "Extra tropical",
+      "paused": false
+    },
+    {
+      "id": "manga",
+      "name": "Manga",
+      "price": 1.5,
+      "desc": "Doce e suculenta",
+      "paused": false
+    }
+  ],
+  "toppings": [
+    {
+      "id": "leite-condensado",
+      "name": "Leite condensado",
+      "price": 0,
+      "desc": "Cobertura clássica",
+      "paused": false
+    },
+    {
+      "id": "chocolate-calda",
+      "name": "Calda de chocolate",
+      "price": 0,
+      "desc": "Doce na medida",
+      "paused": false
+    },
+    {
+      "id": "morango-calda",
+      "name": "Calda de morango",
+      "price": 0,
+      "desc": "Frutada e brilhante",
+      "paused": false
+    },
+    {
+      "id": "mel",
+      "name": "Mel",
+      "price": 0,
+      "desc": "Toque natural",
+      "paused": false
+    }
+  ],
+  "extras": [
+    {
+      "id": "nutella",
+      "name": "Nutella",
+      "price": 4,
+      "desc": "Camada extra especial",
+      "paused": false
+    },
+    {
+      "id": "ovomaltine",
+      "name": "Ovomaltine",
+      "price": 3,
+      "desc": "Crocante maltado",
+      "paused": false
+    },
+    {
+      "id": "bis",
+      "name": "Bis picado",
+      "price": 3,
+      "desc": "Chocolate crocante",
+      "paused": false
+    },
+    {
+      "id": "dose-acai",
+      "name": "Dose extra de açaí",
+      "price": 5,
+      "desc": "Mais sabor no copo",
+      "paused": false
+    }
+  ]
+}
