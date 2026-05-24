@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="hero-media" aria-label="AÃ§aÃ­ com frutas e granola">
-          <img src="ativos/hero-acai.png" alt="AÃ§aÃ­ com frutas, granola e cobertura" />
+          <img src="assets/hero-acai.png" alt="AÃ§aÃ­ com frutas, granola e cobertura" />
         </div>
       </section>
 
@@ -152,7 +152,7 @@
 
         <div class="loyalty-layout">
           <div class="loyalty-copy-panel">
-            <img src="ativos/acai-premium.png" alt="AÃ§aÃ­ premium com frutas e granola" />
+            <img src="assets/acai-premium.png" alt="AÃ§aÃ­ premium com frutas e granola" />
             <div>
               <h3>Faltam poucos para ganhar seu aÃ§aÃ­ grÃ¡tis! ðŸ§</h3>
               <p>
@@ -343,6 +343,43 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+      (function () {
+        var pairs = [
+          [/\u00c3\u00a7/g, "\u00e7"], [/\u00c3\u0087/g, "\u00c7"], [/\u00c3\u00a1/g, "\u00e1"], [/\u00c3\u0081/g, "\u00c1"],
+          [/\u00c3\u00a0/g, "\u00e0"], [/\u00c3\u0080/g, "\u00c0"], [/\u00c3\u00a2/g, "\u00e2"], [/\u00c3\u0082/g, "\u00c2"],
+          [/\u00c3\u00a3/g, "\u00e3"], [/\u00c3\u0083/g, "\u00c3"], [/\u00c3\u00a9/g, "\u00e9"], [/\u00c3\u0089/g, "\u00c9"],
+          [/\u00c3\u00aa/g, "\u00ea"], [/\u00c3\u008a/g, "\u00ca"], [/\u00c3\u00ad/g, "\u00ed"], [/\u00c3\u008d/g, "\u00cd"],
+          [/\u00c3\u00b3/g, "\u00f3"], [/\u00c3\u0093/g, "\u00d3"], [/\u00c3\u00b4/g, "\u00f4"], [/\u00c3\u0094/g, "\u00d4"],
+          [/\u00c3\u00b5/g, "\u00f5"], [/\u00c3\u0095/g, "\u00d5"], [/\u00c3\u00ba/g, "\u00fa"], [/\u00c3\u009a/g, "\u00da"],
+          [/\u00c2\u00a0/g, " "], [/\u00e2\u0080\u00a2/g, "\u2022"], [/\u00e2\u0086\u0092/g, "\u2192"], [/\u00e2\u009c\u0093/g, "\u2713"],
+          [/\u00f0\u009f\u008d\u00a7/g, "\ud83c\udf67"]
+        ];
+        function fixString(value) {
+          if (!value) return value;
+          for (var i = 0; i < pairs.length; i += 1) value = value.replace(pairs[i][0], pairs[i][1]);
+          return value;
+        }
+        function fixAll(root) {
+          var walker = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+          var node = walker.currentNode;
+          while (node) {
+            if (node.nodeType === 3) node.nodeValue = fixString(node.nodeValue);
+            if (node.nodeType === 1) ["alt", "aria-label", "placeholder", "title", "value"].forEach(function (attr) {
+              if (node.hasAttribute(attr)) node.setAttribute(attr, fixString(node.getAttribute(attr)));
+            });
+            node = walker.nextNode();
+          }
+          document.title = fixString(document.title);
+        }
+        window.addEventListener("DOMContentLoaded", function () {
+          fixAll(document.body);
+          new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) { mutation.addedNodes.forEach(function (node) { fixAll(node); }); });
+          }).observe(document.body, { childList: true, subtree: true });
+        });
+      }());
+    </script>
   </body>
 </html>
 
